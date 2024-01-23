@@ -1,3 +1,4 @@
+import 'package:fake_call/screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +12,10 @@ class Application extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false
-    home: ,);
+    return MaterialApp(
+      theme: ThemeData(fontFamily: 'Acme'),
+      debugShowCheckedModeBanner: false,
+      home: Home_screen(),
+    );
   }
 }
