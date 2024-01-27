@@ -136,3 +136,5 @@ Widget _getPhoto() {
     ),
   );
 }
+
+Widget _getDonation() {}
