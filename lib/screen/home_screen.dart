@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Home_screen extends StatelessWidget {
   const Home_screen({super.key});
@@ -20,10 +21,12 @@ class Home_screen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(height: 130),
+              SizedBox(height: 100),
               _getPhoto(),
-              SizedBox(height: 50),
+              SizedBox(height: 80),
               _getStatus(),
+              SizedBox(height: 15),
+              _getDonation(),
             ],
           ),
         ),
@@ -137,4 +140,36 @@ Widget _getPhoto() {
   );
 }
 
-Widget _getDonation() {}
+Widget _getDonation() {
+  return Row(
+    children: [
+      Expanded(
+        child: Container(
+          child: TextButton(
+            onPressed: () {
+              Uri uri = Uri.parse('https://reymit.ir/mohammadamin-andy');
+              launchUrl(uri);
+            },
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'images/donation.png',
+                  height: 55,
+                ),
+                SizedBox(width: 10),
+                Text(
+                  'donate me :))',
+                  style: TextStyle(
+                      color: Colors.amber[500],
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    ],
+  );
+}
